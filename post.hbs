@@ -1,0 +1,194 @@
+{{!< default}}
+
+{{! Post Data for JavaScript }}
+{{#post}}
+<div class="pinky-page-data" data-page-type="no-loop" data-post-id="{{id}}" data-post-url-abs="{{url absolute=" true "}}">
+</div>
+
+{{! Post Output for Small Screen }}
+<div class="pinky-post-s-container pinky-s-only">
+    <article class="{{post_class}} pinky-post-m-article">
+        <header class="pinky-post-s-header">
+            <div class="pinky-post-s-header-inside-container" {{#if image}} style="background-image: url({{image}})" {{/if}}>
+                <div class="pinky-post-s-meta-container">
+                    <div class="pinky-post-s-title-container">
+                        <h1 class="pinky-post-s-title">{{title}}</h1>
+                    </div>
+                    <div class="pinky-post-s-featured-container">
+                        {{#if featured}}
+                        <span class="pinky-post-featured-heart"><i class="fa fa-heart pinky-featured-s-heart"></i></span> {{/if}}
+                    </div>
+                    <div class="pinky-post-s-tags">
+                        <h6>{{tags separator=", " prefix="tagged: "}}</h6>
+                    </div>
+                    <div class="pinky-post-s-published-at">
+                        <p class="pinky-post-s-published-at-p">{{date published_at format="MMMM DD, YYYY"}}</p>
+                    </div>
+                    <div class="pinky-post-s-author">
+                        <p class="pinky-post-s-author-p">by {{author}}</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="pinky-post-s-session-container">
+            <section class="pinky-post-s-section">
+                <div class="pinky-post-s-content-container">
+                    <p class="pinky-post-s-content-p">{{content}}</p>
+                </div>
+            </section>
+        </div>
+    </article>
+</div>
+
+{{! Social Media for Small Screen}}
+<div class="pinky-post-s-social pinky-s-only">
+    <div class="pinky-post-s-social-icon">
+        <a href="https://twitter.com/intent/tweet?text={{encode title}}&url={{url absolute=" true "}}" target="_blank"><i class="fa fa-twitter fa-2x"></i></a> <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute=" true "}}" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a> <a href="https://plus.google.com/share?url={{url absolute=" true "}}" target="_blank"><i class="fa fa-google-plus fa-2x"></i></a>
+    </div>
+</div>
+
+{{! Post Output for Medium Screen }}
+<div class="pinky-post-m-container pinky-m-only">
+    <article class="{{post_class}} pinky-post-m-article">
+        <header class="pinky-post-m-header">
+            {{#if image}}
+            <div class="pinky-post-m-header-inside-container pinky-post-m-header-inside-cover-container" style="background-image: url({{image}})">
+                <div class="pinky-post-m-header-cover-content-container">
+                    <div class="pinky-post-m-meta-cover-container">
+                        <div class="pinky-post-m-title-container">
+                            <h1 class="pinky-post-m-title">{{title}}</h1>
+                        </div>
+                        <div class="pinky-post-m-featured-container">
+                            {{#if featured}}
+                            <span class="pinky-post-featured-heart"><i class="fa fa-heart fa-2x featured-s-heart"></i></span> {{/if}}
+                        </div>
+                        <div class="pinky-post-m-tags">
+                            <h6>{{tags separator=", " prefix="tagged: "}}</h6>
+                        </div>
+                        <div class="pinky-post-m-published-at">
+                            <p class="pinky-post-m-published-at-p">{{date published_at format="MMMM DD, YYYY"}}</p>
+                        </div>
+                        <div class="pinky-post-m-author">
+                            <p class="pinky-post-m-author-p">by {{author}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{else}}
+            <div class="pinky-post-m-header-inside-no-cover-container">
+                <div class="pinky-post-m-header-no-cover-content-container">
+                    <div class="pinky-post-m-header-no-cover-title-container">
+                        <div class="pinky-post-m-title-container">
+                            <h1 class="pinky-post-m-title">{{title}}</h1>
+                        </div>
+                        
+                        <div class="pinky-post-m-tags">
+                            <h6>{{tags separator=", " prefix="tagged: "}}</h6>
+                        </div>
+                    </div>
+                    <div class="pinky-post-m-meta-no-cover-container">
+                        <div class="pinky-post-m-featured-container">
+                            {{#if featured}}
+                            <span class="pinky-post-featured-heart"><i class="fa fa-heart fa-2x pinky-featured-s-heart"></i></span> {{/if}}
+                        </div>
+                        <div class="pinky-post-m-published-at">
+                            <p class="pinky-post-m-published-at-p">{{date published_at format="MMMM DD, YYYY"}}</p>
+                        </div>
+                        <div class="pinky-post-m-author">
+                            <p class="pinky-post-m-author-p">{{author}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/if}}
+        </header>
+        <div class="pinky-post-m-session-container">
+            <section class="pinky-post-m-section">
+                <div class="pinky-post-m-content-container">
+                    <p class="pinky-post-m-content-p">{{content}}</p>
+                </div>
+            </section>
+        </div>
+        <div class="pinky-post-m-meta-author-container">
+            <div class="pinky-post-m-meta-author">
+                {{#author}}
+                    <p class="pinky-post-m-meta-author-p">by <a href="{{url}}"><img class="pinky-post-m-meta-author-img" src="{{image}}"> {{name}}</a></p>
+                {{/author}}
+            </div>
+        </div>
+    </article>
+    {{! Social Media for Medium Screen }}
+    <div class="pinky-post-m-social">
+        <div class="pinky-post-m-social-inside-container">
+            <div class="pinky-post-m-social-content">
+                <div class="pinky-post-m-social-icon"><a href="https://twitter.com/intent/tweet?text={{encode title}}&url={{url absolute=" true "}}" target="_blank"><i class="fa fa-twitter fa-2x"></i></a> <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute=" true "}}" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a> <a href="https://plus.google.com/share?url={{url absolute=" true "}}" target="_blank"><i class="fa fa-google-plus fa-2x"></i></a> </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{! Disqus Comments System }}
+<footer class="pinky-post-comments-container">
+    <div class="pinky-post-comments-inside-container">
+        <div class="pinky-post-comments">
+        </div>
+    </div>
+</footer>
+
+{{! Next / Prevous Post for Small Screen }}
+<div class="pinky-post-s-footer pinky-s-only">
+    <div class="pinky-post-s-related-posts">
+        {{#next_post}}
+        <div class="pinky-post-s-next-post pinky-url-trigger" {{#if image}} style="background-image: url({{image}})" {{/if}}>
+            <div class="pinky-post-s-next-post-inside-container">
+                <h6>Next Post</h6>
+                <h5><a class="pinky-url-trigger-target" href="{{url}}">{{title}}</a></h5>
+            </div>
+        </div>
+        {{/next_post}} {{#prev_post}}
+        <div class="pinky-post-s-prev-post pinky-url-trigger" {{#if image}} style="background-image: url({{image}})" {{/if}}>
+            <div class="pinky-post-s-prev-post-inside-container">
+                <h5><a class="pinky-url-trigger-target" href="{{url}}">{{title}}</a></h5>
+                <h6>Previous Post</h6>
+            </div>
+        </div>
+        {{/prev_post}}
+    </div>
+</div>
+
+{{! Next / Previous Post for Medium Screen }}
+<div class="pinky-post-m-footer pinky-m-only">
+    <div class="pinky-post-m-related-posts">
+        {{#next_post}}
+        <div class="pinky-post-m-next-post url-trigger" {{#if image}} style="background-image: url({{image}})" {{/if}}>
+            <div class="pinky-post-m-next-post-inside-container">
+                <h6>Next Post</h6>
+                <h5><a class="pinky-url-trigger-target" href="{{url}}">{{title}}</a></h5>
+            </div>
+        </div>
+        {{else}}
+        <div class="pinky-post-m-no-next-post pinky-url-trigger">
+            <div class="pinky-post-m-no-next-post-inside-container">
+                <h6>No More Post</h6>
+                <h5><a class="pinky-url-trigger-target" href="{{@blog.url}}">Back to Home</a></h5>
+            </div>
+        </div>
+        {{/next_post}} {{#prev_post}}
+        <div class="pinky-post-m-prev-post pinky-url-trigger" {{#if image}} style="background-image: url({{image}})" {{/if}}>
+            <div class="pinky-post-m-prev-post-inside-container">
+                <h5><a class="pinky-url-trigger-target" href="{{url}}">{{title}}</a></h5>
+                <h6>Previous Post</h6>
+            </div>
+        </div>
+        {{else}}
+        <div class="pinky-post-m-no-prev-post pinky-url-trigger">
+            <div class="pinky-post-m-no-prev-post-inside-container">
+                <h6>No More Post</h6>
+                <h5><a class="pinky-url-trigger-target" href="{{@blog.url}}">Back to Home</a></h5>
+            </div>
+        </div>
+        {{/prev_post}}
+    </div>
+</div>
+
+{{/post}}

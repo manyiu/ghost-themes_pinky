@@ -1,0 +1,88 @@
+<div class="pinky-page-data" data-page-type="loop"></div>
+
+{{! Loop Content for Small Size Screen }}
+{{#foreach posts}}
+<article class="{{post_class}} pinky-loop-s-article pinky-s-only pinky-url-trigger">
+    <div class="pinky-loop-s-article-container{{#if @first}} pinky-loop-s-article-container-first{{/if}}{{#if image}} pinky-loop-s-article-image-container{{else}} pinky-loop-s-article-no-image-container{{/if}}" {{#if image}} style="background-image: url({{image}})" {{/if}}>
+        <div class="pinky-loop-s-article-inside-container{{#if image}} pinky-loop-s-article-inside-image-container{{else}} pinky-loop-s-article-inside-no-image-container{{/if}}">
+            <header class="pinky-loop-s-header">
+                <div class="pinky-loop-s-title-container">
+                    <div class="pinky-loop-s-title">
+                        <h2 class="pinky-loop-s-title-h2"><a class="pinky-url-trigger-target" href="{{url}}">{{title}}</a></h2>
+                    </div>
+                    {{#if featured}}
+                    <div class="pinky-loop-s-featured">
+                        <span class="pinky-loop-s-featured-heart"><i class="fa fa-heart pinky-featured-s-heart"></i></span>
+                    </div>
+                    {{/if}}
+                </div>
+            </header>
+            <section class="pinky-loop-s-excerpt">
+                <p class="pinky-loop-s-excerpt-p"><a class="pinky-loop-s-article-link pinky-s-only" href="{{url}}">{{excerpt words="24"}}...</a></p>
+            </section>
+        </div>
+    </div>
+</article>
+
+{{! Loop Content for Medium Size Screen }}
+<article class="{{post_class}} pinky-loop-m-article pinky-m-only">
+    <div class="pinky-loop-m-article-container{{#if @first}} pinky-loop-m-article-container-first{{/if}}">
+        <div class="pinky-loop-m-header-container">
+            <header class="pinky-loop-m-header">
+                <div class="pinky-loop-m-header-inside-container">
+                    <div class="pinky-loop-m-meta-container">
+                        <div class="pinky-loop-m-meta">
+                                <div class="pinky-loop-m-title">
+                                    <h2 class="pinky-loop-m-title-h2"><a class="pinky-loop-m-article-link" href="{{url}}">{{title}}</a></h2>
+                                </div>
+                                <div class="pinky-loop-m-tags">
+                                    <h6 class="pinky-loop-m-tags-h6">{{tags}}</h6>
+                                </div>
+                                <div class="pinky-loop-m-time">
+                                    <p class="pinky-loop-m-time-p">{{date published_at format="MMMM DD, YYYY"}}</p>
+                                </div>
+                            {{#author}}
+                            <div class="pinky-loop-m-author">
+                                <div class="pinky-loop-m-author-image-container">
+                                    {{#if image}}
+                                    <a class="pinky-loop-m-author-link" href="{{url}}"><img class="pinky-loop-m-author-image" src="{{image}}" alt="{{name}}"></a>
+                                    {{/if}}
+                                </div>
+                                <div class="pinky-loop-m-author-name">
+
+                                    <p>by <a class="pinky-loop-m-author-link" href="{{url}}">{{name}}</a></p>
+                                </div>
+                            </div>
+                            {{/author}}
+                        </div>
+                        <div class="pinky-loop-m-featured-container">
+                            <div class="pinky-loop-m-featured">
+                                {{#if featured}}
+                                <span class="pinky-loop-m-featured-heart"><i class="fa fa-heart fa-2x pinky-featured-m-heart"></i></span> {{/if}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="pinky-loop-m-excerpt-container pinky-url-trigger">
+            <section class="pinky-loop-m-excerpt">
+                <div class="pinky-loop-m-cover">
+                    <a class="pinky-loop-m-article-link pinky-url-trigger-target" href="{{url}}">
+                        {{#if image}}
+                            <img class="pinky-loop-m-cover-img" src="{{image}}" alt="{{title}}">
+                        {{/if}}
+                    </a>
+                </div>
+                <div class="pinky-loop-m-excerpt">
+                    <p class="pinky-loop-m-excerpt-p {{#if image}}pinky-loop-m-image-excerpt-p{{else}}pinky-loop-m-no-image-excerpt-p{{/if}}"><a class="pinky-loop-m-article-link" href="{{url}}">{{excerpt words="48"}}...</a></p>
+                </div>
+            </section>
+        </div>
+    </div>
+</article>
+{{/foreach}}
+<div class="pinky-infinite-scroll-controller">
+    <p class="pinky-infinite-scroll-controller-loading"><i class="fa fa-spinner fa-spin"></i> Loading posts...</p>
+</div>
+{{pagination}}

@@ -1,0 +1,44 @@
+{{! Navigation for Small Screen }}
+<div class="pinky-nav-s pinky-s-only"> 
+    <div class="pinky-nav-s-title-container">
+        <div class="pinky-nav-s-icon">
+            <span class="pinky-nav-s-toggle"><i class="fa fa-bars fa-2x"></i></span>
+        </div>
+        <div class="pinky-nav-s-title">
+            <h4>{{@blog.title}}</h4>
+        </div>
+    </div>
+    <div class="pinky-nav-s-menu-container">
+        {{#foreach navigation}}
+            <div class="pinky-nav-s-menu-items pinky-url-trigger">
+                <span class="pinky-nav-s-{{slug}}{{#if current}} pinky-nav-s-current{{/if}}">
+                    <a class="pinky-url-trigger-target" href="{{url}}">{{label}}</a>
+                </span>
+            </div>
+        {{/foreach}}
+    </div>
+</div>
+{{! Navigation for Medium Screen }}
+<div class="pinky-nav-m pinky-m-only">  
+    <div class="pinky-nav-m-inside-container">
+        <div class="pinky-nav-m-title-container pinky-url-trigger">
+            <div class="pinky-nav-m-description-container">
+                <h6 class="pinky-nav-m-description">{{@blog.description}}</h6>
+            </div>
+            <div class="pinky-nav-m-title-inside-container">
+                <h1 class="pinky-nav-m-title"><a class="pinky-url-trigger-target" href="{{@blog.url}}">{{@blog.title}}</a></h1>
+            </div>
+        </div>
+        <div class="pinky-nav-m-placeholder"> 
+        </div>
+        <div class="pinky-nav-m-menu">
+            <div class="pinky-nav-m-menu-items-container">
+                {{#foreach navigation}}
+                        <div class="pinky-nav-m-menu-items{{#if current}} pinky-nav-m-menu-items-current{{/if}} url-trigger">
+                            <span class="pinky-nav-m-{{slug}}"><a class="pinky-nav-m-link pinky-url-triggle-target" href="{{url}}"><h4 class="pinky-nav-m-link-label">{{label}}</h4></a></span>
+                        </div>
+                {{/foreach}} 
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<nav class="pinky-pagination" role="navigation">
+    <div class="pinky-pagination-container">
+        <div class="pinky-pagination-previous">
+            {{#if prev}}
+                <a class="pinky-pagination-newer-posts" href="{{page_url prev}}"><i class="fa fa-arrow-left"></i> Newer Posts</a>
+            {{/if}}
+        </div>
+        <div class="pinky-pagination-next">
+            {{#if next}}
+                <a class="pinky-pagination-older-posts" href="{{page_url next}}">Older Posts <i class="fa fa-arrow-right"></i></a>
+            {{/if}}
+        </div>
+    </div>
+</nav>

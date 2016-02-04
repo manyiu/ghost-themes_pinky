@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    {{! Styles and Fonts }}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/pinky.css"}}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Amatic+SC|Indie+Flower' rel='stylesheet' type='text/css'>
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+    
+    <div class="pinky-load-data" data-blog-url="{{@blog.url}}" data-url="{{url}}" data-type-index="{{#is "index"}}yes{{/is}}" data-type-home="{{#is "home"}}yes{{/is}}" data-type-post="{{#is "post"}}yes{{/is}}" data-type-page="{{#is "page"}}yes{{/is}}" data-type-tag="{{#is "tag"}}yes{{/is}}" data-type-author="{{#is "author"}}yes{{/is}}" data-type-paged="{{#is "paged"}}yes{{/is}}" data-type-private="{{#is "private"}}yes{{/is}}" data-page="{{pagination.page}}" data-prev="{{pagination.prev}}" data-next="{{pagination.next}}" data-pages="{{pagination.pages}}" data-total="{{pagination.total}}" data-limit="{{pagination.limit}}"></div>
+
+    {{navigation}}
+
+    <div class="pinky-site-wrapper">
+
+        {{! Everything else gets inserted here }}
+        {{{body}}}
+        
+        <div class="pinky-google-analytics"></div>
+
+        {{! Footer }}
+        {{> "footer"}}
+
+    </div>
+
+    {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+    {{! The JavaScript files for Pinky }}
+    <script type="text/javascript" src="{{asset "js/pinky.js"}}"></script>
+
+</body>
+</html>

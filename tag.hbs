@@ -1,0 +1,23 @@
+{{!< default}}
+
+{{#tag}}
+{{! Tag Data for JavaScript }}
+<div class="pinky-tag-data" data-id={{id}}></div>
+
+{{! Tag Header }}
+<header class="pinky-tag-header">
+    <div class="{{#if image}}pinky-tag-header-cover" style="background-image: url({{image}}){{else}}pinky-tag-header-no-cover{{/if}}">
+        <div class="{{#if image}}pinky-tag-header-cover-background{{else}}pinky-tag-header-no-cover-background{{/if}}">
+            <div class="pinky-tag-header-inside-container">
+                <h1 class="pinky-tag-header-title">{{name}}</h1>
+            </div>
+        </div>
+    </div>
+</header>
+{{/tag}}
+
+<main id="pinky-content" class="pinky-content" role="main">
+    {{! loop.hbs }}
+    {{> "loop"}}
+    
+</main>

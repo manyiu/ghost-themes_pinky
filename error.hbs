@@ -1,0 +1,19 @@
+{{!< default}}
+
+{{! Return to Homepage after 10 seconds }}
+<meta http-equiv="refresh" content="10; url={{@blog.url}}" />
+
+
+<div class="pinky-error-page">
+    <a href="{{@blog.url}}">
+    <div class="pinky-error-icon pinky-error-hover">
+        <p class="pinky-error-sad"><i class="fa fa-frown-o fa-5x"></i></p>
+        <p class="pinky-error-smile"><i class="fa fa-smile-o fa-5x"></i></p>
+    </div>
+    <div class="pinky-error-message pinky-error-hover">
+        <p class="pinky-error-sad">Err? Error...</p>
+        <p class="pinky-error-smile">Go to homepage...</p>
+    </div>
+    </a>
+</div>
+

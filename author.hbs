@@ -1,0 +1,59 @@
+{{!< default}}
+
+{{! Author Data for Javascript }}
+{{#author}}
+<div class="pinky-author-data" data-id={{id}}></div>
+{{/author}}
+     
+<header class="pinky-author-header">
+    {{#author}}
+    {{! Header for Small Screen }}
+    <div class="pinky-author-s-header pinky-s-only">
+        <div class="pinky-author-s-header-cover"{{#if cover}} style="background-image: url({{cover}})"{{/if}}>
+            {{#if image}}
+                <div class="pinky-author-s-header-image-container">
+                    <img class="pinky-author-s-header-image" src="{{image}}">
+                </div>
+            {{/if}}
+            
+            <div class="pinky-author-s-header-info">
+                <h5>{{name}}</h5>
+                {{#if website}}<p><i class="fa fa-globe"></i> <a href="{{website}}" target="_blank">{{website}}</a></p>{{/if}}
+                {{#if location}}<p><i class="fa fa-home"></i> {{location}}</p>{{/if}}
+                {{#if bio}}<p>{{bio}}</p>{{/if}}
+            </div>
+            
+        </div>
+    </div>
+    {{! Header for Medium Screen }}
+    <div class="pinky-author-m-header pinky-m-only">
+        <div class="pinky-author-m-header-inside-container"{{#if cover}} style="background-image: url({{cover}})"{{/if}}>
+            <div class="pinky-author-m-header-cover-container">
+                <div class="pinky-author-m-header-image-container">
+                    {{#if image}}
+                    
+                    <img class="pinky-author-m-header-image-img" src="{{image}}">
+                    {{/if}}
+                </div>
+                <div class="pinky-auth-m-header-meta">
+                    <h1>{{name}}</h1>
+                    {{#if website}}<p><i class="fa fa-globe"></i> <a href="{{website}}" target="_blank">{{website}}</a></p>{{/if}}
+                    {{#if location}}<p><i class="fa fa-home"></i> {{location}}</p>{{/if}}
+                    {{#if bio}}<p>{{bio}}</p>{{/if}}
+                </div>
+
+                
+            </div>
+            
+        
+        </div>
+            
+    </div>
+    
+    {{/author}}
+</header>
+
+<main id="pinky-content" class="pinky-content" role="main">
+    {{! loop.hbs }}
+    {{> "loop"}}
+</main>
